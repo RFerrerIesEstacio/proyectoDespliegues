@@ -1,0 +1,8 @@
+#!/bin/bash
+
+INPUT_FILE=$1
+if ! egrep "^MOTIVO DEL COMMIT: .*, IMPLEMENTACION: .*$" INPUT_FILE &>/dev/null; then
+    echo "Mensaje inválido. El formato es:"
+    echo "MOTIVO DEL COMMIT: motivo, IMPLEMENTACIÓN: implementación"
+    exit 1
+fi 
